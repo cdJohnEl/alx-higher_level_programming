@@ -1,6 +1,17 @@
 #!/usr/bin/python3
-def print_last_digit(number):
-    '''prints the last digit of a number'''
-    last_digit = abs(number) % 10
-    print(f"{last_digit}", end='')
-    return last_digit
+
+def uppercase(str):
+    for ch in str:
+        if ord(ch) >= 97 and ord(ch) <= 122:
+            ch = chr(ord(ch) - 32)
+        print("{:s}".format(ch), end='')
+
+    print('\n', end=""#!/usr/bin/python3
+
+def uppercase(str):
+    for ch in str:
+        if ord(ch) >= 97 and ord(ch) <= 122:
+            ch = chr(ord(ch) - 32)
+        print("{:s}".format(ch), end='')
+
+    print('\n', end=""))
