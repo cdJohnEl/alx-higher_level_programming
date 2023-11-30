@@ -1,24 +1,26 @@
 #!/usr/bin/python3
-"""Defines an algorithm that finds the peak."""
+"""Defines a peak-finding algorithm."""
 
-def find_peak(list_integers):
-    if list_integers == []:
+
+def find_peak(list_of_integers):
+    """ Finds the peak in a list of integers """
+    if list_of_integers == []:
         return None
-    
-    list_len = len(list_integers)
-    i = int(list_len/2)
-    list = list_integers
 
-    if i - 1 < 0 and i + 1 >= list_len:
-        return list[i]
-    elif i - 1 < 0:
-        return list[i] if list[i] > list[i + 1] else list[i + 1]
-    elif i + 1 >= list_len:
-        return list[i] if list[i] > list[i - 1] else list[i -1]
+    length = len(list_of_integers)
+    m = int(length / 2)
+    li = list_of_integers
 
-    if list[i - 1] < list[i] > list[i + 1]:
-        return list[i]
+    if m - 1 < 0 and m + 1 >= length:
+        return li[m]
+    elif m - 1 < 0:
+        return li[m] if li[m] > li[m + 1] else li[m + 1]
+    elif m + 1 >= length:
+        return li[m] if li[m] > li[m - 1] else li[m - 1]
 
-    if list[i + 1] > list[i - 1]:
-        return find_peak(list[i:])
-    return find_peak(list[:i])
+    if li[m - 1] < li[m] > li[m + 1]:
+        return li[m]
+
+    if li[m + 1] > li[m - 1]:
+        return find_peak(li[m:])
+    return find_peak(li[:m])
